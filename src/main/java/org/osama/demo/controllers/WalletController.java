@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -48,7 +49,7 @@ public class WalletController {
 
 
 //    withdraw from wallet and and add to bank account ..
-    @GetMapping( value = "/wallets/{amount}",produces = MediaType.TEXT_PLAIN_VALUE)
+    @PutMapping( value = "/wallets/{amount}",produces = MediaType.TEXT_PLAIN_VALUE)
     public String WithdrawWallet(@PathVariable("amount") String amount)
             throws ExecutionException, InterruptedException {
 

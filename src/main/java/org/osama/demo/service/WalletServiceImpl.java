@@ -58,10 +58,13 @@ public class WalletServiceImpl implements WalletService {
             Thread.sleep(2000L);
             stringWalletMap= walletRepository.withdrawFromWallet(amount);
             bankAccountMap=walletRepository.addToBankAccount(amount);
-            response="User: Osama"+" Last Upadate : "+ bankAccountMap.get("osama").getLastUpdated()
-                    +"\n Wallet Amount : "+stringWalletMap.get("osama").getBalance()+stringWalletMap
+            response="User: Osama"+" Last Upadate : "+ bankAccountMap.get("osama")
+                    .getLastUpdated()
+                    +"\n Wallet Amount : "+stringWalletMap.get("osama")
+                    .getBalance()+stringWalletMap
                     .get("osama").getCurrency()
-                    +"\n Bank Amount : "+bankAccountMap.get("osama").getBalance()+bankAccountMap.get("osama")
+                    +"\n Bank Amount : "+bankAccountMap.get("osama")
+                    .getBalance()+bankAccountMap.get("osama")
                         .getCurrency();
         } catch (InterruptedException e) {
             e.printStackTrace();
